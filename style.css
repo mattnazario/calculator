@@ -9,19 +9,41 @@ body{
 }
 
 .screen{
-    width: 290px;
-    text-align: center;
+    width: 240px;
+    padding: 20px;
+    font-size: 32px;
+    text-align: right;
     background-color: white;
+    border: 2px solid black;
+    border-radius: 8px;
+}
+.buttons{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: gray;
+    padding: 20px;
+    border: 3px solid white;
+    border-radius: 10px;
 }
 
+.operators{
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.numbers{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 .row{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 2px;
-    width: 250px;
-    height: 100px;
-    flex: 1;
+    gap: 5px;
 }
 
 button{
@@ -40,14 +62,15 @@ button:hover{
     transform: scale(1.1);
 }
 
-#buttonclear{
-    width: 75px;
-}
 
 .calculator{
     display: flex;
     flex-direction: column;
-    background-color: white;
+    background-color: gray;
+    border: 3px solid black;
+    padding: 15px;
+    gap: 20px;
+    border-radius: 15px;
 }
 
 

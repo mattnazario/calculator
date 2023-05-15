@@ -43,13 +43,13 @@ function updateScreen(){
 function equalsButton(){
     n1 = operate(n1,n2,operator);
     screenText.textContent = n1;
-    n2 = " ";
+    n2 = "";
     opNumber = 0;
     operator = '';
 }
 
 function clickedButton(e){
-    if(e.target.textContent === "CLEAR"){
+    if(e.target.textContent === "AC"){
         allClear();
         return;
     }
@@ -69,10 +69,17 @@ function clickedButton(e){
         operator = e.target.textContent;
     }else{
         if(opNumber === 0){
-            n1+= e.target.textContent;
+            if(n1==="" | n1==="0") n1 = e.target.textContent;
+            else{
+                n1+= e.target.textContent;
+            }            
         }
         if(opNumber === 1){
-            n2+= e.target.textContent;
+            if(n2==="") n2 = e.target.textContent;
+            else{
+                n2+= e.target.textContent;
+            }
+            
         }
     }
  
