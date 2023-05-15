@@ -1,0 +1,53 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+    background-color: rgb(106, 172, 165);
+    gap: 10px;
+}
+
+.screen{
+    width: 290px;
+    text-align: center;
+    background-color: white;
+}
+
+.row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+    width: 250px;
+    height: 100px;
+    flex: 1;
+}
+
+button{
+    width: 50px;
+    height: 25px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 8px;
+    
+
+    transform: all 0.07s ease;
+}
+
+button:hover{
+    background-color: gray;
+    transform: scale(1.1);
+}
+
+#buttonclear{
+    width: 75px;
+}
+
+.calculator{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+
