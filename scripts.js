@@ -5,10 +5,10 @@ function subtract(a, b){
     return a-b;
 }
 function multiply(a, b){
-    return a*b;
+    return (a*b).toFixed(5);
 }
 function divide(a, b){
-    return a/b;
+    return (a/b).toFixed(5);
 }
 
 function operate(a, b, operator){
