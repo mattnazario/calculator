@@ -33,9 +33,14 @@ function allClear(){
     operator = '';
     console.log("CLEAR");
     screenText.textContent = " ";
+    updateScreen();
 }
 function screenClear(){
     screenText.textContent = " ";
+}
+
+function updateScreen(){
+    screenText.textContent = `${n1} ${operator} ${n2}`;
 }
 
 function clickedButton(e){
@@ -46,14 +51,14 @@ function clickedButton(e){
     if(e.target.textContent === "="){
         n1 = operate(n1,n2,operator);
         screenText.textContent = n1;
-        n2 = 0;
+        n2 = " ";
         opNumber = 0;
         operator = '';
         return; 
     }
     if(e.target.textContent === '+' | e.target.textContent === '-' | e.target.textContent=== '*' | e.target.textContent === '/')
     {
-        opNumber++;
+        if(opNumber === 0) opNumber++;
         operator = e.target.textContent;
     }else{
         if(opNumber === 0){
@@ -63,11 +68,9 @@ function clickedButton(e){
             n2+= e.target.textContent;
         }
     }
-    console.log(`n1 = ${n1}`);
-    console.log(`n2 = ${n2}`);
-    console.log(`operator = ${operator}`);
+ 
 
-    screenText.textContent+=e.target.textContent;
+    updateScreen();
 }
 buttons = document.querySelectorAll("button");
 buttons.forEach( btn => btn.addEventListener("click", clickedButton));
