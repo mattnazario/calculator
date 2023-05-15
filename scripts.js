@@ -22,25 +22,30 @@ function operate(a, b, operator){
         case '/':
             return divide(Number(a),Number(b));
         default:
-            return;
+            return a;
     }
 }
 
 function allClear(){
     opNumber = 0;
-    n1 = "";
+    n1 = "0";
     n2 = "";
     operator = '';
     console.log("CLEAR");
     screenText.textContent = " ";
     updateScreen();
 }
-function screenClear(){
-    screenText.textContent = " ";
-}
 
 function updateScreen(){
     screenText.textContent = `${n1} ${operator} ${n2}`;
+}
+
+function equalsButton(){
+    n1 = operate(n1,n2,operator);
+    screenText.textContent = n1;
+    n2 = " ";
+    opNumber = 0;
+    operator = '';
 }
 
 function clickedButton(e){
@@ -49,15 +54,17 @@ function clickedButton(e){
         return;
     }
     if(e.target.textContent === "="){
-        n1 = operate(n1,n2,operator);
-        screenText.textContent = n1;
-        n2 = " ";
-        opNumber = 0;
-        operator = '';
+        equalsButton();
         return; 
     }
     if(e.target.textContent === '+' | e.target.textContent === '-' | e.target.textContent=== '*' | e.target.textContent === '/')
     {
+        if(n1 === ''){
+            return;
+        }
+        if(n1 !== "" && n2 !== ""){
+            equalsButton();
+        }
         if(opNumber === 0) opNumber++;
         operator = e.target.textContent;
     }else{
